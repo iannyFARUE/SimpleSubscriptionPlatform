@@ -3,7 +3,7 @@ A simple Subscription Platform
 
 ## About Simple Subscription Platform
 
-simple subscription platform is a RESTful API that uses MySQL database in where users can subscribe to multiple website. Whenever a new post is published on a particular website, all it's subscribers shall receive an email with the post title and description in it. (no authentication of any kind is required)
+simple subscription platform is a RESTful API that uses MySQL database where users can subscribe to multiple website. When a post is added to a particular website, all it's subscribers shall receive an email with the post title and description in it.
 
 ## Usage
 
@@ -47,10 +47,37 @@ FLUSH PRIVILEGES;
 CREATE DATABASE simplesubscriptionplatform;
 ```
 
+```
 # Run the webserver on port 8000
-
 php artisan serve
+```
+
+## Seed the website table
 
 ```
+php artisan db:seed
+
+```
+
+## SENDING POST ENDPOINT
+
+```
+localhost:80000/api/posts
+
+Post payload :
+    {
+	"title":"Love",
+	"description":"love me now",
+	"content":"I love myself",
+	"website_id":1
+}
+
+```
+
+## Sending email
+
+```
+
+php artisan queue:work
 
 ```

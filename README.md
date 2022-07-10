@@ -22,7 +22,35 @@ DB_PASSWORD=your-mysql-server-password
 
 Create a database and create your user
 
+## Login to mysql server via terminal
+
+```bash
+mysql -u root -p
 ```
+
+## Create User
+
+```sql
+CREATE USER 'someuser'@'localhost' IDENTIFIED BY 'somepassword';
+```
+
+## Grant All Priveleges On All Databases
+
+```sql
+GRANT ALL PRIVILEGES ON * . * TO 'someuser'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+## Create Database
+
+```sql
+CREATE DATABASE simplesubscriptionplatform;
+```
+
 # Run the webserver on port 8000
+
 php artisan serve
+
+```
+
 ```

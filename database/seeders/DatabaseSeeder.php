@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
+use App\Models\Website;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +22,27 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        // \App\Models\Website::factory(10)->create();
+
+        User::factory()
+            ->has(Website::factory()->count(2))
+            ->create();
+
+            User::factory()
+            ->has(Website::factory()->count(2))
+            ->create();
+
+            User::factory()
+            ->has(Website::factory()->count(2))
+            ->create();
+
+            User::factory()
+            ->has(Website::factory()->count(2))
+            ->create();
+
+            User::factory()
+            ->has(Website::factory()->count(2))
+            ->create();
     }
 }
